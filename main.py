@@ -22,7 +22,7 @@ bot = Client(
 
 HELP_TEXT = """
 ʜᴇʏᴀ! {}
-✘ Hello I Am Vocal The AI Based Chat Bot You Can Add To Chat To Improve Your Group Reach 💕.
+✘ Hello I Am Vocal The AI Based Chat Bot You Can Add Me In ChatGroup To Improve Your Group Reach 💕.
 """
 
 @bot.on_message(filters.command(["start"], prefixes=["/", "!"]))
