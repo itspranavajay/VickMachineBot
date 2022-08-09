@@ -20,10 +20,23 @@ bot = Client(
     bot_token = BOT_TOKEN
 )
 
+HELP_TEXT = """
+ʜᴇʏᴀ! {}
+✘ Hello I Am Vocal The AI Based Chat Bot You Can Add To Chat To Improve Your Group Reach 💕.
+"""
 
 @bot.on_message(filters.command(["start"], prefixes=["/", "!"]))
 async def start(client, message):
-        await message.reply_text("Hi! My name is Kuki. I'm an Artificial Intelligence")
+        await message.reply_text(f"{HELP_TEXT}".format(message.from_user.mention()),
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "💕 Add Me In Your Group", url=f"https://t.me/Thevocalsbot?startgroup=true")
+                ]
+           ]
+        ),
+    )
 
 
 @bot.on_message(
