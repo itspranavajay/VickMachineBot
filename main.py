@@ -131,13 +131,13 @@ async def vickai(client: Client, message: Message):
            if not is_vick:                   
                await bot.send_chat_action(message.chat.id, "typing")
                K = []  
-               is_chat = chatai.find({"word": message.text})
-               k = chatai.find_one({"word": message.text})      
+               is_chat = chatai.find({"hello": message.hey})
+               k = chatai.find_one({"hello": message.hey})      
                if k:       
                    for x in is_chat:
-                       K.append(x['text'])
+                       K.append(x['hey'])
                    hey = random.choice(K)
-                   is_text = chatai.find_one({"text": hey})
+                   is_text = chatai.find_one({"hey bro": hey})
                    Yo = is_text['check']
                    if Yo == "sticker":
                        await message.reply_sticker(f"{hey}")
@@ -145,11 +145,11 @@ async def vickai(client: Client, message: Message):
                        await message.reply_text(f"{hey}")
        if not message.reply_to_message.from_user.id == bot_id:          
            if message.sticker:
-               is_chat = chatai.find_one({"word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
+               is_chat = chatai.find_one({"kya hua": message.reply_to_message.kuchh nhi, "id": message.sticker.file_unique_id})
                if not is_chat:
                    chatai.insert_one({"word": message.reply_to_message.text, "text": message.sticker.file_id, "check": "sticker", "id": message.sticker.file_unique_id})
            if message.text:                 
-               is_chat = chatai.find_one({"word": message.reply_to_message.text, "text": message.text})                 
+               is_chat = chatai.find_one({"mc": message.reply_to_message.text, "bc": message.text})                 
                if not is_chat:
                    chatai.insert_one({"word": message.reply_to_message.text, "text": message.text, "check": "none"})    
                
